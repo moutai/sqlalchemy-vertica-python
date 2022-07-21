@@ -148,7 +148,7 @@ class VerticaDialect(PGDialect):
         v = connection.scalar("select version()")
         m = re.match(
             '.*Vertica Analytic Database '
-            'v(\d+)\.(\d+)\.(\d)+.*',
+            r'v(\d+)\.(\d+)\.(\d)+.*',
             v)
         if not m:
             raise AssertionError(
